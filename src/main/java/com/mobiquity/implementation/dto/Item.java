@@ -1,13 +1,11 @@
-package com.mobiquity.dto;
+package com.mobiquity.implementation.dto;
 
 import lombok.*;
 
 import java.io.Serializable;
 
-@NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Setter
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Item implements Serializable {
