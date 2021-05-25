@@ -9,6 +9,10 @@
 
   <modelVersion>4.0.0</modelVersion>
 
+  <properties>
+    <version.lombok>1.18.10</version.lombok>
+  </properties>
+
   <build>
     <plugins>
       <plugin>
@@ -21,5 +25,13 @@
       </plugin>
     </plugins>
   </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${version.lombok}</version>
+    </dependency>
+  </dependencies>
 
 </project>
