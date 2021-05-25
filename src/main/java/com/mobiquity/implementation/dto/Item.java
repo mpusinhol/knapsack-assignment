@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Item implements Serializable {
 
     @EqualsAndHashCode.Include
-    private Integer id;
-    private Double weight;
-    private Double value;
+    private final Integer id;
+    private final Double weight;
+    private final Double value;
 }
