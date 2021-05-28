@@ -30,7 +30,7 @@ public class Packer {
         try {
             testCases = parseFile(filePath);
         } catch (Exception e) {
-            throw new APIException("Error while reading file arguments.", e);
+            throw new APIException("Error while reading file arguments. " + e.getMessage(), e);
         }
 
         String solution = testCases.stream()
