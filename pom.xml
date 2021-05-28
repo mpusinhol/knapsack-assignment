@@ -18,6 +18,7 @@
     <version.log4j-api>2.11.2</version.log4j-api>
     <version.log4j-core>2.11.2</version.log4j-core>
     <version.slf4j-impl>2.12.0</version.slf4j-impl>
+    <version.apache-commons-lang>3.12.0</version.apache-commons-lang>
   </properties>
 
   <dependencyManagement>
@@ -109,6 +110,11 @@
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-slf4j-impl</artifactId>
       <version>${version.slf4j-impl}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>${version.apache-commons-lang}</version>
     </dependency>
   </dependencies>
 
