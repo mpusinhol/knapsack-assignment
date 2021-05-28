@@ -37,7 +37,7 @@ public class Packer {
                 .map(testCase -> getMaximizedPackage(testCase.getMaxWeight(), testCase.getItems(), 0, new HashMap<>()))
                 .map(items -> {
                     String caseResult = items.stream()
-                            .map(item -> item.getId().toString())
+                            .map(item -> String.valueOf(item.getId()))
                             .reduce("", (result, itemId) -> result += (itemId + ","));
 
                     return "".equals(caseResult) ?

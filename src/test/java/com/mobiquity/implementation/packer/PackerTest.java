@@ -17,6 +17,10 @@ public class PackerTest {
     private static final String OVER_HUNDRED_PACKAGE_WEIGHT_INPUT = "over-hundred-package-weight-input.txt";
     private static final String ZERO_ITEMS_INPUT = "zero-items-input.txt";
     private static final String OVER_ITEMS_LIMIT_INPUT = "over-items-limit-input.txt";
+    private static final String NEGATIVE_ITEM_WEIGHT_INPUT = "negative-item-weight-input.txt";
+    private static final String OVER_HUNDRED_ITEM_WEIGHT_INPUT = "over-hundred-item-weight-input.txt";
+    private static final String NEGATIVE_ITEM_VALUE_INPUT = "negative-item-value-input.txt";
+    private static final String OVER_HUNDRED_ITEM_VALUE_INPUT = "over-hundred-item-value-input.txt";
 
     private static final String DEFAULT_EXCEPTION_MESSAGE = "Error while reading file arguments.";
 
@@ -70,6 +74,46 @@ public class PackerTest {
     void testOverItemsLimit() {
         String expectedMessage = DEFAULT_EXCEPTION_MESSAGE + " Items must be in a range between 1 and 15.";
         String input = getResourceAbsolutePath(OVER_ITEMS_LIMIT_INPUT);
+
+        APIException e = Assertions.assertThrows(APIException.class, () -> Packer.pack(input));
+
+        Assertions.assertEquals(expectedMessage, e.getMessage());
+    }
+
+    @Test
+    void testNegativeItemWeight() {
+        String expectedMessage = DEFAULT_EXCEPTION_MESSAGE + " Item weight must be non null in a range between 0 and 100.";
+        String input = getResourceAbsolutePath(NEGATIVE_ITEM_WEIGHT_INPUT);
+
+        APIException e = Assertions.assertThrows(APIException.class, () -> Packer.pack(input));
+
+        Assertions.assertEquals(expectedMessage, e.getMessage());
+    }
+
+    @Test
+    void testOverHundredItemWeight() {
+        String expectedMessage = DEFAULT_EXCEPTION_MESSAGE + " Item weight must be non null in a range between 0 and 100.";
+        String input = getResourceAbsolutePath(OVER_HUNDRED_ITEM_WEIGHT_INPUT);
+
+        APIException e = Assertions.assertThrows(APIException.class, () -> Packer.pack(input));
+
+        Assertions.assertEquals(expectedMessage, e.getMessage());
+    }
+
+    @Test
+    void testNegativeItemValue() {
+        String expectedMessage = DEFAULT_EXCEPTION_MESSAGE + " Item value must be non null in a range between 0 and 100.";
+        String input = getResourceAbsolutePath(NEGATIVE_ITEM_VALUE_INPUT);
+
+        APIException e = Assertions.assertThrows(APIException.class, () -> Packer.pack(input));
+
+        Assertions.assertEquals(expectedMessage, e.getMessage());
+    }
+
+    @Test
+    void testOverHundredItemValue() {
+        String expectedMessage = DEFAULT_EXCEPTION_MESSAGE + " Item value must be non null in a range between 0 and 100.";
+        String input = getResourceAbsolutePath(OVER_HUNDRED_ITEM_VALUE_INPUT);
 
         APIException e = Assertions.assertThrows(APIException.class, () -> Packer.pack(input));
 
