@@ -15,6 +15,9 @@
     <version.junit-jupiter-api>5.5.0</version.junit-jupiter-api>
     <version.junit-jupiter-params>5.5.0</version.junit-jupiter-params>
     <version.junit-jupiter-engine>5.5.0</version.junit-jupiter-engine>
+    <version.log4j-api>2.11.2</version.log4j-api>
+    <version.log4j-core>2.11.2</version.log4j-core>
+    <version.slf4j-impl>2.12.0</version.slf4j-impl>
   </properties>
 
   <dependencyManagement>
@@ -91,6 +94,21 @@
       <artifactId>junit-jupiter-engine</artifactId>
       <version>${version.junit-jupiter-engine}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>${version.log4j-api}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>${version.log4j-core}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j-impl</artifactId>
+      <version>${version.slf4j-impl}</version>
     </dependency>
   </dependencies>
 
