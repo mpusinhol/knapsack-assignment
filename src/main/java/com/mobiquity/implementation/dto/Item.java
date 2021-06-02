@@ -7,7 +7,7 @@ import java.io.Serializable;
 @Getter
 @ToString
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Item implements Serializable {
+public final class Item {
 
     @EqualsAndHashCode.Include
     private final int id;

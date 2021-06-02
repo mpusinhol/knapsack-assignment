@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Getter
-public class TestCase {
+public final class TestCase {
 
     private final double maxWeight;
     private final List<Item> items;
